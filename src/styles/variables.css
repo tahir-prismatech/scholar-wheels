@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+
+
+  /* my own way */
+  --backGroundColor--auth: #F6F6F6;
+  --bg-main: #ffffff;
+  --primary-main: #047720;
+
+
+  /* Primary Colors (Green Shades) */
+  
+  --color-primary-50: #EDFFF1;
+  --color-primary-100: #D5FFDF;
+  --color-primary-200: #ADFFC1;
+  --color-primary-300: #6EFF91;
+  --color-primary-400: #28FF59;
+  --color-primary-500: #00EA34; 
+  --color-primary-600: #00C327;
+  --color-primary-700: #009822;
+  --color-primary-800: #047720;
+  --color-primary-900: #05561A;
+  --color-primary-950: #00370C;
+
+  /* Secondary Colors (Muted Green/Grey Shades) */
+  --color-secondary-50: #F5F8F5;
+  --color-secondary-100: #DEE9DF;
+  --color-secondary-200: #BCD3BD;
+  --color-secondary-300: #93B596;
+  --color-secondary-400: #6D9473;
+  --color-secondary-500: #537959;
+  --color-secondary-600: #406146;
+  --color-secondary-700: #364F3B;
+  --color-secondary-800: #2E4131;
+  --color-secondary-900: #2A372E;
+  --color-secondary-950: #080C09;
+
+  /* Black / Greys */
+  --color-black-50: #F6F6F6;
+  --color-black-100: #E7E7E7;
+  --color-black-200: #D1D1D1;
+  --color-black-300: #B0B0B0;
+  --color-black-400: #888888;
+  --color-black-500: #6D6D6D;
+  --color-black-600: #5D5D5D;
+  --color-black-700: #4F4F4F;
+  --color-black-800: #454545;
+  --color-black-900: #3D3D3D;
+  --color-black-950: #262626;
+
+  /* Error Colors (Reds) */
+  --color-error-50: #FFF2F1;
+  --color-error-100: #FFE3E1;
+  --color-error-200: #FFCBC8;
+  --color-error-300: #FFA7A1;
+  --color-error-400: #FE746B;
+  --color-error-500: #F6362A;
+  --color-error-600: #E42A1E;
+  --color-error-700: #E17733;
+  --color-error-800: #9F1D15;
+  --color-error-900: #831F19;
+  --color-error-950: #480B07;
+
+  /* Core Colors */
+  --color-heading: #080C09;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-bg-dark: #212529;
+  --color-bg-medium-dark: #4A4A4A;
+
+  /* Font Family */
+  --font-family-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  
+  /* Font Sizes - Based on your design system */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 1.875rem;  /* 30px */
+  --text-4xl: 2.25rem;   /* 36px */
+  --text-5xl: 3rem;      /* 48px */
+  --text-6xl: 3.75rem;   /* 60px */
+  --text-7xl: 4.5rem;    /* 72px */
+  --text-8xl: 6rem;      /* 96px */
+  --text-9xl: 8rem;      /* 128px */
+  
+  /* Line Heights */
+  --line-height-xs: 0.5rem;     /* 16px */
+  --line-height-sm: 0.75rem;  /* 20px */
+  --line-height-base: 1.0rem; /* 24px */
+  --line-height-lg: 1.25rem;  /* 28px */
+  --line-height-xl: 1.50rem;  /* 28px */
+  --line-height-2xl: 1.75rem;    /* 32px */
+  --line-height-3xl: 2.00rem; /* 36px */
+  --line-height-4xl: 2.25rem;  /* 40px */
+  --line-height-5xl: 2.50rem;    /* 48px */
+  --line-height-6xl: 2.75rem; /* 60px */
+  --line-height-7xl: 3.0rem;  /* 72px */
+  --line-height-8xl: 6rem;    /* 96px */
+  --line-height-9xl: 8rem;    /* 128px */
+
+}
+
+[data-theme="dark"] {
+  /* Primary Colors (Green Shades) - reversed and darkened for dark mode */
+  --color-primary-50: #00370C;
+  --color-primary-100: #05561A;
+  --color-primary-200: #047720;
+  --color-primary-300: #009822;
+  --color-primary-400: #00C327;
+  --color-primary-500: #00EA34;
+  --color-primary-600: #28FF59;
+  --color-primary-700: #6EFF91;
+  --color-primary-800: #ADFFC1;
+  --color-primary-900: #D5FFDF;
+  --color-primary-950: #EDFFF1;
+
+  /* Secondary Colors (Muted Green/Grey Shades) - inverted/dark mode friendly */
+  --color-secondary-50: #080C09;
+  --color-secondary-100: #2A372E;
+  --color-secondary-200: #2E4131;
+  --color-secondary-300: #364F3B;
+  --color-secondary-400: #406146;
+  --color-secondary-500: #537959;
+  --color-secondary-600: #6D9473;
+  --color-secondary-700: #93B596;
+  --color-secondary-800: #BCD3BD;
+  --color-secondary-900: #DEE9DF;
+  --color-secondary-950: #F5F8F5;
+
+  /* Black / Greys - inverted greys for dark mode */
+  --color-black-50: #262626;
+  --color-black-100: #3D3D3D;
+  --color-black-200: #454545;
+  --color-black-300: #4F4F4F;
+  --color-black-400: #5D5D5D;
+  --color-black-500: #6D6D6D;
+  --color-black-600: #888888;
+  --color-black-700: #B0B0B0;
+  --color-black-800: #D1D1D1;
+  --color-black-900: #E7E7E7;
+  --color-black-950: #F6F6F6;
+
+  /* Error Colors (Reds) - slightly muted for dark mode */
+  --color-error-50: #480B07;
+  --color-error-100: #831F19;
+  --color-error-200: #9F1D15;
+  --color-error-300: #E17733;
+  --color-error-400: #E42A1E;
+  --color-error-500: #F6362A; 
+  --color-error-600: #FE746B;
+  --color-error-700: #FFA7A1;
+  --color-error-800: #FFCBC8;
+  --color-error-900: #FFE3E1;
+  --color-error-950: #FFF2F1;
+
+  /* Core Colors */
+  --color-heading: #E7E7E7; 
+  --color-white: #000000; 
+  --color-black: #FFFFFF; 
+  --color-bg-dark: #121212;
+  --color-bg-medium-dark: #2E2E2E;
+}
