@@ -6,7 +6,7 @@ import logo from "./../../assets/logo.png";
 export default function BusinessDetail({func}){
     return <div className="auth-page">
       <img src={logo} alt="Logo"></img>
-      <Height height={"50px"} />
+      <Height height={"60 px"} />
       <h3 className="font-semibold">Add Business Details</h3>
       <h6 className="text-base font-light">
         Add your business details to complete your setup and get started.

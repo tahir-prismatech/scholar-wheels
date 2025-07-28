@@ -22,8 +22,8 @@ export default function AuthLayout({children}){
 
     return (
         <div className="row auth-layout">
-            <div className="col-6">{children}</div>
-            <div className="col-6 auth-pic">
+            <div className="col-7">{children}</div>
+            <div className="col-5 auth-pic">
                 <img src={arr[crntImgIdx]} alt="nothing"></img>
             </div>
         </div>
