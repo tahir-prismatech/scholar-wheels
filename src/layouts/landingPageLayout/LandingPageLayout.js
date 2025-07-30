@@ -1,7 +1,6 @@
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import "./LandingPageLayout.css";
 import logo from "./../../assets/images/logo.png";
-import Height from "../../components/height";
 import { useState } from "react";
 import graph from "./../../assets/icons/graph.png";
 import schoolBus from "./../../assets/icons/SchoolBus.png";
@@ -17,11 +16,12 @@ import accountibility from "./../../assets/icons/receipt.png";
 import profile from "./../../assets/icons/setting.png";
 import notification from "./../../assets/icons/notification.png";
 import Padding from "../../utlis/Padding";
+import Height from "../../utlis/height";
 
 export default function LandingPageLayout() {
   const location = useLocation();
-  console.log(location.pathname.slice(1));
-  const [currentItem, setItem] = useState(location.pathname.slice(1));
+  console.log(location.pathname.slice(1,10));
+  const [currentItem, setItem] = useState(location.pathname.slice(1,10));
 
   return (
     <div className="row landingPage">
@@ -48,7 +48,7 @@ export default function LandingPageLayout() {
               <h6
                 className={`${
                   currentItem === "Dashboard" ? "font-medium" : "font-normal"
-                } text-sm colorBlack`}
+                } text-xs colorBlack`}
               >
                 Dashboard
               </h6>
@@ -66,7 +66,7 @@ export default function LandingPageLayout() {
                   currentItem === "Vehicle-Management"
                     ? "font-medium"
                     : "font-normal"
-                } text-sm colorBlack`}
+                } text-xs colorBlack`}
               >
                 Vehicle Management
               </h6>
@@ -82,7 +82,7 @@ export default function LandingPageLayout() {
               <h6
                 className={`${
                   currentItem === "Driver" ? "font-medium" : "font-normal"
-                } text-sm colorBlack`}
+                } text-xs colorBlack`}
               >
                 Driver Management
               </h6>
@@ -98,7 +98,7 @@ export default function LandingPageLayout() {
               <h6
                 className={`${
                   currentItem === "route" ? "font-medium" : "font-normal"
-                } text-sm colorBlack`}
+                } text-xs colorBlack`}
               >
                 Route Management
               </h6>
@@ -116,7 +116,7 @@ export default function LandingPageLayout() {
                   currentItem === "schedule-rides"
                     ? "font-medium"
                     : "font-normal"
-                } text-sm colorBlack`}
+                } text-xs colorBlack`}
               >
                 Schedule Rides
               </h6>
@@ -132,7 +132,7 @@ export default function LandingPageLayout() {
               <h6
                 className={`${
                   currentItem === "active-rides" ? "font-medium" : "font-normal"
-                } text-sm colorBlack`}
+                } text-xs colorBlack`}
               >
                 Active Rides
               </h6>
@@ -151,7 +151,7 @@ export default function LandingPageLayout() {
               <h6
                 className={`${
                   currentItem === "monitoring" ? "font-medium" : "font-normal"
-                } text-sm colorBlack`}
+                } text-xs colorBlack`}
               >
                 Live Monitoring
               </h6>
@@ -167,7 +167,7 @@ export default function LandingPageLayout() {
               <h6
                 className={`${
                   currentItem === "request" ? "font-medium" : "font-normal"
-                } text-sm colorBlack`}
+                } text-xs colorBlack`}
               >
                 Requests & Contracts
               </h6>
@@ -183,7 +183,7 @@ export default function LandingPageLayout() {
               <h6
                 className={`${
                   currentItem === "chat" ? "font-medium" : "font-normal"
-                } text-sm colorBlack`}
+                } text-xs colorBlack`}
               >
                 Chat
               </h6>
@@ -202,7 +202,7 @@ export default function LandingPageLayout() {
               <h6
                 className={`${
                   currentItem === "logbook" ? "font-medium" : "font-normal"
-                } text-sm colorBlack`}
+                } text-xs colorBlack`}
               >
                 Logbook
               </h6>
@@ -220,7 +220,7 @@ export default function LandingPageLayout() {
                   currentItem === "accountibility"
                     ? "font-medium"
                     : "font-normal"
-                } text-sm colorBlack`}
+                } text-xs colorBlack`}
               >
                 Accounting & Billing
               </h6>
@@ -237,7 +237,7 @@ export default function LandingPageLayout() {
               <h6
                 className={`${
                   currentItem === "profile" ? "font-medium" : "font-normal"
-                } text-sm colorBlack`}
+                } text-xs colorBlack`}
               >
                 Profile Setting{" "}
               </h6>
@@ -253,7 +253,7 @@ export default function LandingPageLayout() {
               <h6
                 className={`${
                   currentItem === "notification" ? "font-medium" : "font-normal"
-                } text-sm colorBlack`}
+                } text-xs colorBlack`}
               >
                 Notifications
               </h6>

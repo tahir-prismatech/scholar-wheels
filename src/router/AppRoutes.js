@@ -4,6 +4,9 @@ import ProtectedRoute from "./ProtectedRoute";
 import AuthPage from "../pages/authPages/AuthPages";
 import LandingPageLayout from "../layouts/landingPageLayout/LandingPageLayout";
 import Dashboard from "../pages/dashboard/Dashboard";
+import { ReusableTable } from "../components/reusableTable/ReusableTable";
+import TableData from "../pages/TableData/TableData";
+import AddAndEditVehicle from "../pages/addAndEditVehicle/AddAndEditVehicle";
 
 export default function AppRoutes() {
   return (
@@ -18,7 +21,15 @@ export default function AppRoutes() {
           }
         /> */}
         <Route path="/" element={<LandingPageLayout />}>
-          <Route path="dashboard" element = {<Dashboard/>}/>
+          <Route path="dashboard" element={<Dashboard />}>
+            <Route
+              path=""
+              element={
+                <TableData/>
+              }
+            />
+            <Route path="addNew" element={<AddAndEditVehicle/>} />
+          </Route>
         </Route>
         <Route path="/login" element={<AuthPage />} />
 

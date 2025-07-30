@@ -1,0 +1,47 @@
+/* Table Styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  table-layout: fixed;               /* ensures equal-width columns */
+}
+
+/* Heading Row */
+.table-header th {
+  font-size: 14px;
+  color: #6D6D6D;
+  text-align: left;                  /* 🔄 left aligned */
+  font-weight: 400;
+  padding: 12px 16px;                /* uniform padding */
+  border-bottom: 2px solid #E7E7E7;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Body Rows */
+.table-body-row td {
+  font-size: 14px;
+  padding: 12px 16px;                /* same as th for symmetry */
+  border-bottom: 1px solid #E7E7E7;
+  color: #333;
+  text-align: left;       
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Hover effect (optional) */
+.table-body-row:hover {
+  background-color: #f9f9f9;
+}
+
+
+
+/* Pagination buttons */
+
+
+.button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

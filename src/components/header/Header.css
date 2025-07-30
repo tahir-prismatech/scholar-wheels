@@ -1,0 +1,55 @@
+.heading-with-description{
+    display: flex;
+    flex-direction: column;
+    
+}
+.header{
+    padding: 0px 10px;
+    height: 50px;
+    width: 100%;
+
+}
+
+.img{
+  border-radius: 100px;
+    height: 40px;
+    width: 40px;  
+}
+
+.primary{
+    color: #047720;
+}
+
+.icon-with-bg{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: #ECF4E9;
+    border-radius: 100px;
+    height: 40px;
+    width: 40px;
+}
+
+.obj-contain {
+  object-fit: contain;
+  height: 20px;
+}
+
+.obj-cover {
+    height: 20px;
+  object-fit: cover;
+}
+
+.obj-fill {
+  object-fit: fill;
+  height: 20px;
+}
+
+.obj-scale-down {
+  object-fit: scale-down;
+  height: 20px;
+}

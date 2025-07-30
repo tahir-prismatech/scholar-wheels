@@ -1,9 +1,10 @@
 import { useState } from "react";
-import Height from "../height";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaSearch } from "react-icons/fa";
 import "./My_Input_Field.css";
+import Height from "../../utlis/height";
 
 export default function InputField({
+  style,
   icon,
   name,
   label,
@@ -16,6 +17,7 @@ export default function InputField({
 }) {
   const [showPassword, setShowPassword] = useState(false);
   const isPassword = type === "password";
+  const isSearchIcon = icon;
   const inputType = isPassword && showPassword ? "text" : type;
 
   return (
@@ -24,7 +26,14 @@ export default function InputField({
       <Height height={"5px"} />
 
       <div className="eye-icon-wrapper">
+        {isSearchIcon && (
+          <span className="searchIcon"
+          >
+            <FaSearch />
+          </span>
+        )}
         <input
+        style={style}
           name={name}
           id={id}
           type={inputType}

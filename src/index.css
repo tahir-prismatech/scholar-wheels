@@ -1,5 +1,62 @@
 @import './styles/Global.css';
 
+.obj-contain {
+  object-fit: contain;
+}
+
+.obj-cover {
+  object-fit: cover;
+}
+
+.obj-fill {
+  object-fit: fill;
+}
+
+.obj-scale-down {
+  object-fit: scale-down;
+}
+
+.height10{
+  height: 10px;
+}
+
+.height20{
+  height: 20px;
+}
+
+.height30{
+  height: 30px;
+}
+
+.height40{
+  height: 40px;
+}
+
+.height50{
+  height: 50px;
+}
+
+.height60{
+  height: 60px;
+}
+
+.height70{
+  height: 70px;
+}
+
+.height80{
+  height: 80px;
+}
+
+.height90{
+  height: 90px;
+}
+
+.height100{
+  height: 100px;
+}
+
+
 /* Global Poppins Font Configuration */
 
 /* Google Fonts Import */

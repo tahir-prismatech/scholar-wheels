@@ -1,6 +1,6 @@
 .landingPage {
   background-color: #ecf4e9;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
 }
 
@@ -77,15 +77,16 @@
 .icon {
   vertical-align: middle;
   margin: 0% !important;
-  height: 22px !important;
-  width: 22px !important;
+  height: 16px !important;
+  width: 16px !important;
   object-fit: contain;
 }
 
 .mainPage {
   background-color: #fff;
   border-radius: 12px;
-  height: 100vh;
+  padding: 20px;
+  flex: 1;
   overflow-y: auto;
-  flex: 1
+  
 }

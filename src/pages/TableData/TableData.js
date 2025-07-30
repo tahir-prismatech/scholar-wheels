@@ -1,16 +1,11 @@
-import { Outlet, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button from "../../components/button/Button";
 import DropdownButton from "../../components/dropDown/DropDownMenu";
-import Header from "../../components/header/Header";
 import InputField from "../../components/my_input/My_Input_Field";
 import { ReusableTable } from "../../components/reusableTable/ReusableTable";
-// import { ReusableTable } from "../../components/reusableTable/ReusableTable";
-import Height from "../../utlis/height";
 import Width from "../../utlis/Width";
-import "./Dashboard.css";
 
-export default function Dashboard() {
-
+export default function TableData() {
   const navigate = useNavigate();
   const vehicleData = [
     {
@@ -87,21 +82,47 @@ export default function Dashboard() {
     },
   ];
 
-
   let headToEdit = () => {
-    navigate("addNew")
-  }
+    navigate("addNew");
+  };
 
   return (
-    <div className="column">
-      <Header
-        title={"Vehicle Management"}
-        description={"Manage your fleet. Stay road-ready."}
-      />
-      <Height height={"30px"} />
-      <div className="main">
-        <Outlet />
+    <>
+      <div className="d-flex align-items-center justify-content-between">
+        <InputField
+          style={{ height: "40px", width: "33%" }}
+          name="search"
+          placeholder={"Search"}
+          icon={true}
+        />
+        <div className="d-flex align-items-center">
+          <DropdownButton name={"Type"} options={["Van", "Bus"]} />
+          <Width width={"10px"} />
+          <DropdownButton name={"Status"} options={["Active", "In active"]} />
+          <Width width={"10px"} />
+          <Button
+            onClick={headToEdit}
+            style={{ height: "30px", padding: "1px 15px", width: "100px" }}
+          >
+            + Tahir
+          </Button>
+        </div>
       </div>
-    </div>
+      <div>
+        <ReusableTable
+          heading={[
+            "Vehicle No",
+            "Make & Model",
+            "Type",
+            "Year",
+            "Reg Expiry",
+            "Status",
+            "Assigned To",
+            "Actions",
+          ]}
+          data={vehicleData}
+        />
+      </div>
+    </>
   );
 }
