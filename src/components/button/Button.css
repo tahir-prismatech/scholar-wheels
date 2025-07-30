@@ -1,4 +1,4 @@
-.btn {
+.button {
     padding: 20px;
     border-radius: 12px;
   font-family: var(--font-family-primary);
@@ -10,6 +10,6 @@
   transition: all 0.2s ease;
 }
 
-.btn:hover{
+.button:hover{
   background-color: var(--color-primary-900)
 }

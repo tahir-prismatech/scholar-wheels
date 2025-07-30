@@ -11,17 +11,47 @@
   color: var(--color-heading);
 }
 
-.input-field input {
+.custom-input {
+  width: 100%;
   padding: 0.8rem 1rem;
   font-size: 1rem;
-  border: 1px solid #ccc;
-  border-color: #A2A1A833;
+  border: 1px solid #A2A1A833;
   border-radius: 6px;
   background-color: var(--color-white);
   color: var(--color-black);
+  outline: none;
+  transition: 0.2s ease-in-out;
 }
 
-.input-field input:focus {
-  outline: none;
+.custom-input:focus {
   border-color: var(--color-primary-500);
+}
+
+.input-with-error {
+  border-color: red !important;
+}
+
+.eye-icon-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.eye-icon-wrapper input {
+  padding-right: 40px; /* Leave space for eye icon */
+}
+
+.eye-icon-btn {
+  position: absolute;
+  right: 10px;
+  color: #666;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.error-text {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
 }
