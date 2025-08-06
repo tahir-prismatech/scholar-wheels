@@ -94,11 +94,6 @@ export default function Dashboard() {
 
   return (
     <div className="column">
-      <Header
-        title={"Vehicle Management"}
-        description={"Manage your fleet. Stay road-ready."}
-      />
-      <Height height={"30px"} />
       <div className="main">
         <Outlet />
       </div>

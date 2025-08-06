@@ -4,8 +4,12 @@ import DropdownButton from "../../components/dropDown/DropDownMenu";
 import InputField from "../../components/my_input/My_Input_Field";
 import { ReusableTable } from "../../components/reusableTable/ReusableTable";
 import Width from "../../utlis/Width";
+import Header from "../../components/header/Header";
+import "./TableData.css";
+import Height from "../../utlis/height";
+import Tabs from "../../utlis/tabs/Tabs";
 
-export default function TableData() {
+export default function TableData({isTabs = false, heading, description}) {
   const navigate = useNavigate();
   const vehicleData = [
     {
@@ -88,41 +92,50 @@ export default function TableData() {
 
   return (
     <>
-      <div className="d-flex align-items-center justify-content-between">
-        <InputField
-          style={{ height: "40px", width: "33%" }}
-          name="search"
-          placeholder={"Search"}
-          icon={true}
-        />
-        <div className="d-flex align-items-center">
-          <DropdownButton name={"Type"} options={["Van", "Bus"]} />
-          <Width width={"10px"} />
-          <DropdownButton name={"Status"} options={["Active", "In active"]} />
-          <Width width={"10px"} />
-          <Button
-            onClick={headToEdit}
-            style={{ height: "30px", padding: "1px 15px", width: "100px" }}
-          >
-            + Tahir
-          </Button>
+      <Header
+        title={heading}
+        description={description}
+      />
+      <Height height={20} />
+      <div className="col border-class ">
+        {isTabs && <Tabs/>}
+        {isTabs && <Height height={20} />}
+        <div className="d-flex align-items-center justify-content-between">
+          <InputField
+            style={{ height: "40px", width: "33%" }}
+            name="search"
+            placeholder={"Search"}
+            icon={true}
+          />
+          <div className="d-flex align-items-center">
+            <DropdownButton name={"Type"} options={["Van", "Bus"]} />
+            <Width width={"10px"} />
+            <DropdownButton name={"Status"} options={["Active", "In active"]} />
+            <Width width={"10px"} />
+            <Button
+              onClick={headToEdit}
+              style={{ height: "30px", padding: "1px 15px", width: "120px" }}
+            >
+              + Add New
+            </Button>
+          </div>
         </div>
-      </div>
-      <div>
-        <ReusableTable
-          heading={[
-            "Vehicle No",
-            "Make & Model",
-            "Type",
-            "Year",
-            "Reg Expiry",
-            "Status",
-            "Assigned To",
-            "Actions",
-          ]}
-          data={vehicleData}
-        />
-      </div>
-    </>
+        <div>
+          <ReusableTable
+            heading={[
+              "Vehicle No",
+              "Make & Model",
+              "Type",
+              "Year",
+              "Reg Expiry",
+              "Status",
+              "Assigned To",
+              "Actions",
+            ]}
+            data={vehicleData}
+          />
+        </div>
+      </div></>
+
   );
 }

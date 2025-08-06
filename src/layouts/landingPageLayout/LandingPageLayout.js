@@ -1,7 +1,7 @@
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import "./LandingPageLayout.css";
 import logo from "./../../assets/images/logo.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import graph from "./../../assets/icons/graph.png";
 import schoolBus from "./../../assets/icons/SchoolBus.png";
 import car from "./../../assets/icons/driving.png";
@@ -21,7 +21,11 @@ import Height from "../../utlis/height";
 export default function LandingPageLayout() {
   const location = useLocation();
   console.log(location.pathname.slice(1,10));
-  const [currentItem, setItem] = useState(location.pathname.slice(1,10));
+  const [currentItem, setItem] = useState("");
+  useEffect(() => {
+  const current = location.pathname.split("/")[1];
+  setItem(current);
+}, [location]);
 
   return (
     <div className="row landingPage">
@@ -34,7 +38,7 @@ export default function LandingPageLayout() {
           </div>
           <NavLink
             className="nav-link"
-            onClick={() => setItem("dashboard")}
+            // onClick={() => setItem("dashboard")}
             to={"/dashboard"}
           >
             <div
@@ -56,10 +60,14 @@ export default function LandingPageLayout() {
           </NavLink>
           <NavLink
             className="nav-link"
-            onClick={() => setItem("Vehicle-Management")}
+            // onClick={() => setItem("Vehicle-Management")}
             to={"/vehicleManagement"}
           >
-            <div className="sideBarMenuItem">
+            <div className={
+                currentItem === "Vehicle-Management" 
+                  ? "sideBarMenuItem-active"
+                  : "sideBarMenuItem"
+              }>
               <img className="icon" src={schoolBus} alt="Vehicle-Management" />
               <h6
                 className={`${
@@ -74,10 +82,14 @@ export default function LandingPageLayout() {
           </NavLink>
           <NavLink
             className="nav-link"
-            onClick={() => setItem("Driver")}
-            to={"/driver"}
+            // onClick={() => setItem("driver")}
+            to={"driver"}
           >
-            <div className="sideBarMenuItem">
+            <div className={
+                currentItem === "driver" 
+                  ? "sideBarMenuItem-active"
+                  : "sideBarMenuItem"
+              }>
               <img className="icon" src={car} alt="Driver" />
               <h6
                 className={`${
@@ -106,7 +118,7 @@ export default function LandingPageLayout() {
           </NavLink>
           <NavLink
             className="nav-link"
-            onClick={() => setItem("schedule-rides")}
+            // onClick={() => setItem("schedule-rides")}
             to={"/scheduleRides"}
           >
             <div className="sideBarMenuItem">

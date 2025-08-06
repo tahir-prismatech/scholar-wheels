@@ -76,16 +76,6 @@ export function ReusableTable({ heading, data }) {
 
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      {/* Filtering input */}
-      {/* <div style={{ marginBottom: 12 }}>
-        <input
-          className="field"
-          type="text"
-          placeholder="Filter..."
-          value={filterText}
-          onChange={handleFilterChange}
-        />
-      </div> */}
 
       <Height height={"15px"} />
       <table className="table">
@@ -158,7 +148,7 @@ export function ReusableTable({ heading, data }) {
         <Width width={"40px"}/>
          <div>
           <Height height={"10px"}/>
-          <h6 style={{color:"#4A4A4A"}} className="text-sm font-normal">1-50 of 1,250</h6>
+          <h6 style={{color:"#4A4A4A"}} className="text-sm font-normal">{`${(currentPage - 1) * 3 + 1}-${currentPage * 3} of ${sortedData.length}`}</h6>
         </div>
         <Width width={"40px"}/>
         <div>

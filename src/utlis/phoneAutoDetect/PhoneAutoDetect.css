@@ -1,0 +1,32 @@
+.react-tel-input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.react-tel-input .flag-dropdown {
+  height: 38px;
+  border: 1px solid #ced4da;
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  background-color: white;
+}
+
+.react-tel-input .flag-dropdown .selected-flag {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.react-tel-input .form-control {
+  height: 38px !important;
+  padding: 5px 10px 5px 45px !important; /* left padding zyada hogi to flag k sath text overlap ni hoga */
+  font-size: 14px !important;
+  border-radius: 0 4px 4px 0 !important;
+  border: 1px solid #ced4da !important;
+  border-left: none !important;
+  width: 100%;
+  box-shadow: none !important;
+}
