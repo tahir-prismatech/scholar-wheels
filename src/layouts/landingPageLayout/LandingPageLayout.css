@@ -57,8 +57,7 @@
 }
 
 .sideBarMenuItem:hover {
-  background-color: #537959;
-  /* background-color: #bdf39a50; */
+  background-color: #bdf39a50;
   text-decoration: none;
   border-radius: 30px;
 }
