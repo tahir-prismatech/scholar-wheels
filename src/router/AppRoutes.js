@@ -1,6 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import LandingPage from "../pages/landingPage/LandingPage";
-import ProtectedRoute from "./ProtectedRoute";
 import AuthPage from "../pages/authPages/AuthPages";
 import LandingPageLayout from "../layouts/landingPageLayout/LandingPageLayout";
 import Dashboard from "../pages/dashboard/Dashboard";
@@ -9,6 +7,8 @@ import TableData from "../pages/TableDataOfVehicleManagement/TableData";
 import DriverManagement from "../pages/driverManagement/DriverManagement";
 
 import AddAndEditDriver from "../pages/addAndEditDriver/AddAndEditDriver";
+import AddNewDriver from "../pages/addNewDriver/AddNewDriver";
+import DriverDetails from "../pages/driverDetails/DriverDetails";
 
 export default function AppRoutes() {
   return (
@@ -30,7 +30,7 @@ export default function AppRoutes() {
                 <TableData heading={"Vehicle Management"} description={"Manage your fleet. Stay road-ready."} />
               }
             />
-            <Route path="addNew" element={<AddAndEditVehicle  />} />
+            <Route path="addNew" element={<AddAndEditVehicle />} />
           </Route>
           <Route path="driver" element={<DriverManagement />} >
             <Route
@@ -39,7 +39,16 @@ export default function AppRoutes() {
                 <TableData isTabs={true} heading={"Driver Management"} description={"Manage your drivers, assign them to vehicles, and track license status."} />
               }
             />
-            <Route path="addNew" element={<AddAndEditDriver />} />
+            <Route path="addNew" element={<AddNewDriver />} >
+              <Route
+                path=""
+                element={
+                  <AddAndEditDriver />
+                }
+              />
+              <Route path="driverInfo" element={<DriverDetails />} />
+
+            </Route>
           </Route>
         </Route>
         <Route path="/login" element={<AuthPage />} />

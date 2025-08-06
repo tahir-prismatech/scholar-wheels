@@ -5,6 +5,9 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 // src/index.js ya src/main.jsx
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
 import { AuthProvider } from "./contexts/AuthContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

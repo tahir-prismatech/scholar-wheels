@@ -1,0 +1,33 @@
+.borderClass{
+    border: 1px solid #E7E7E7;
+    border-radius: 10px;
+
+}
+
+.btn-success{
+    height: 30px; 
+    padding: 1px 15px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;    
+    border: none;
+    width: 130px;
+
+
+
+    border-radius: 10px;
+    background-color: #047720;
+}
+
+.text-green {
+  color: #047720;
+}
+
+.bg-custom {
+  background-color: #EDFFF1;
+  border-radius: 5px;
+}
+
+.badge {
+  font-size: 14px;
+}

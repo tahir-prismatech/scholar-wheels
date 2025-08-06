@@ -13,7 +13,7 @@ export default function PhoneAutoDetect() {
         fetch('https://api.country.is')
             .then(res => res.json())
             .then(res => {
-                const country = res.country_code.toLowerCase(); // ✅ Correct
+                const country = res.country.toLowerCase(); 
                 console.log(country)
                 setCountryCode(country);
             })

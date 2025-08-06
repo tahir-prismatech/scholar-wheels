@@ -101,13 +101,17 @@ export default function TableData({isTabs = false, heading, description}) {
         {isTabs && <Tabs/>}
         {isTabs && <Height height={20} />}
         <div className="d-flex align-items-center justify-content-between">
-          <InputField
-            style={{ height: "40px", width: "33%" }}
+          <div className="col-md-3">
+            <InputField
+            style={{ height: "40px" }}
             name="search"
             placeholder={"Search"}
             icon={true}
           />
-          <div className="d-flex align-items-center">
+          </div>
+          
+          <div className="d-flex align-items-center col-md-3">
+
             <DropdownButton name={"Type"} options={["Van", "Bus"]} />
             <Width width={"10px"} />
             <DropdownButton name={"Status"} options={["Active", "In active"]} />
