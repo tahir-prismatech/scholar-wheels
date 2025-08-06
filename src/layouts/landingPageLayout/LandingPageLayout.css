@@ -20,7 +20,8 @@
   object-fit: contain;
 }
 
-.nav-link {
+.nav-link,
+.nav-link * {
   text-decoration: none !important;
 }
 
@@ -56,7 +57,9 @@
 }
 
 .sideBarMenuItem:hover {
-  background-color: #bdf39a50;
+  background-color: #537959;
+  /* background-color: #bdf39a50; */
+  text-decoration: none;
   border-radius: 30px;
 }
 

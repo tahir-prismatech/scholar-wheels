@@ -9,7 +9,8 @@ import "./TableData.css";
 import Height from "../../utlis/height";
 import Tabs from "../../utlis/tabs/Tabs";
 
-export default function TableData({isTabs = false, heading, description}) {
+export default function TableData({isTabs = false, heading, description, buttonText = "Add New"}) { 
+
   const navigate = useNavigate();
   const vehicleData = [
     {
@@ -120,7 +121,7 @@ export default function TableData({isTabs = false, heading, description}) {
               onClick={headToEdit}
               style={{ height: "30px", padding: "1px 15px", width: "120px" }}
             >
-              + Add New
+              + {buttonText}
             </Button>
           </div>
         </div>

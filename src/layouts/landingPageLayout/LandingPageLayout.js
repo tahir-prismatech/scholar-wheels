@@ -39,7 +39,7 @@ export default function LandingPageLayout() {
           <NavLink
             className="nav-link"
             // onClick={() => setItem("dashboard")}
-            to={"/dashboard"}
+            to={"dashboard"}
           >
             <div
               className={
@@ -61,7 +61,7 @@ export default function LandingPageLayout() {
           <NavLink
             className="nav-link"
             // onClick={() => setItem("Vehicle-Management")}
-            to={"/vehicleManagement"}
+            to={"vehicleManagement"}
           >
             <div className={
                 currentItem === "Vehicle-Management" 
@@ -102,14 +102,18 @@ export default function LandingPageLayout() {
           </NavLink>
           <NavLink
             className="nav-link"
-            onClick={() => setItem("route")}
-            to={"/routeManagement"}
+            onClick={() => setItem("routeManagement")}
+            to={"routeManagement"}
           >
-            <div className="sideBarMenuItem">
+            <div className={
+                currentItem === "routeManagement" 
+                  ? "sideBarMenuItem-active"
+                  : "sideBarMenuItem"
+              }>
               <img className="icon" src={arrow} alt="route" />
               <h6
                 className={`${
-                  currentItem === "route" ? "font-medium" : "font-normal"
+                  currentItem === "routeManagement" ? "font-medium" : "font-normal"
                 } text-xs colorBlack`}
               >
                 Route Management
