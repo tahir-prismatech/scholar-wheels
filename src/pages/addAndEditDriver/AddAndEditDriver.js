@@ -68,6 +68,8 @@ export default function AddAndEditDriver() {
             Cancel
           </button>
           <button
+          style={{height:"40px"}}
+
             onClick={handleSave}
             type="button"
             className="btn btn-success"

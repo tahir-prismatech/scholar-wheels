@@ -8,8 +8,17 @@ import divider from "../../assets/icons/divider.png";
 import Width from "../../utlis/Width";
 import DropdownButton from "../dropDown/DropDownMenu";
 
-export function ReusableTable({ heading, data }) {
-  // Sorting and filtering state
+export function ReusableTable({ data }) {
+  const headers = data.length > 0 ? Object.keys(data[0]) : [];
+  
+  
+  const heading = headers.map(header => 
+    header
+      .replace(/([A-Z])/g, ' $1') 
+      .replace(/^./, str => str.toUpperCase())
+      .trim()
+  );
+  
   const [currentPage, setPage] = useState(1);
   const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
   const [filterText, setFilterText] = useState("");
@@ -96,16 +105,62 @@ export function ReusableTable({ heading, data }) {
                 )}
               </th>
             ))}
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody className="table-body">
+          {slicedData.map((item, rowIndex) => (
+            <tr className="table-body-row" key={item.id || rowIndex}>
+              {headers.map((header) => (
+                <td className="table-data" key={header}>
+                  {header === "status" ? (
+                    <div
+                      style={{
+                        backgroundColor:  item[header] === "Active" ? "#EDFFF1" : item[header] === "Inactive" ? "#FFF2F2" : "#FFF2F2",
+
+
+                        borderRadius: "22px",
+                        width: "auto",
+                        height: "auto",
+                        padding: "4px 0px",
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "center",
+                        alignContent: "center",
+                      }}
+                    >
+                      {item[header]}
+                    </div>
+                  ) : (
+                    item[header]
+                  )}
+                </td>
+              ))}
+              <td className="table-data">
+                <div style={{ display: "flex", flexDirection: "row" }}>
+                  <img className="height20" src={pencil} alt="pencil" />
+                  <Width width={"5px"} />
+                  <img className="height20" src={divider} alt="divider" />
+                  <Width width={"5px"} />
+                  <img className="height20" src={del} alt="trash" />
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+        {/* <tbody className="table-body">
           {slicedData.map((item) => (
             <tr className="table-body-row" key={item.id}>
-              <td className="table-data">{item.vehicleNo}</td>
-              <td className="table-data">{item.makeModel}</td>
-              <td className="table-data">{item.type}</td>
-              <td className="table-data">{item.year}</td>
-              <td className="table-data">{item.regExpiry}</td>
+              {headers.map((header) => (
+                <td className="table-data" key={header}>
+                  {item[header]}
+                </td>
+              ))} */}
+              
+              {/* <td className="table-data">{item[heading[1]]}</td>
+              <td className="table-data">{item[heading[2]]}</td>
+              <td className="table-data">{item[heading[3]]}</td>
+              <td className="table-data">{item[heading[4]]}</td>
               <td className="table-data">
                 <div
                   style={{
@@ -122,20 +177,11 @@ export function ReusableTable({ heading, data }) {
                 >
                   {item.status}
                 </div>
-              </td>
-              <td className="table-data">{item.assignedTo}</td>
-              <td className="table-data">
-                <div style={{ display: "flex", flexDirection: "row" }}>
-                  <img className="height20" src={pencil} alt="pencil" />
-                  <Width width={"5px"} />
-                  <img className="height20" src={divider} alt="divider" />
-                  <Width width={"5px"} />
-                  <img className="height20" src={del} alt="trash" />
-                </div>
-              </td>
-            </tr>
-          ))}
-        </tbody>
+              </td> */}
+              
+            {/* </tr>
+          ))} */}
+        {/* </tbody> */}
       </table>
 
       <div className="d-flex align-items-center justify-content-end">

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./Tabs.css"
 
-const Tabs = () => {
+const Tabs = ({activeTab, setActiveTab}) => {
 
-  const [activeTab, setActiveTab] = useState("default");
+
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };

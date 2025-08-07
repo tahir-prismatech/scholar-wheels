@@ -12,6 +12,10 @@ import DriverDetails from "../pages/driverDetails/DriverDetails";
 import RouteManagement from "../pages/routeManagement/RouteManagement";
 import AddAndEditRoute from "../pages/addAndEditRoute/AddAndEditRoute";
 import ProtectedRoute from "./ProtectedRoute";
+import LoadingSpinner from "../components/loadingSpinner/LoadingSpinner";
+import VehicleManagement from "../pages/vehicleManagement/VehicleManagement";
+import DriverManagementData from "../pages/driverManagement/DriverManagementData";
+import RouteManagementData from "../pages/routeManagement/RouteManagementData";
 
 export default function AppRoutes() {
   return (
@@ -37,10 +41,11 @@ export default function AppRoutes() {
             <Route
               path=""
               element={
-                <TableData
-                  heading={"Vehicle Management"}
-                  description={"Manage your fleet. Stay road-ready."}
-                />
+                <VehicleManagement/>
+                // <TableData
+                //   heading={"Vehicle Management"}
+                //   description={"Manage your fleet. Stay road-ready."}
+                // />
               }
             />
             <Route path="addNew" element={<AddAndEditVehicle />} />
@@ -49,13 +54,8 @@ export default function AppRoutes() {
             <Route
               path=""
               element={
-                <TableData
-                  isTabs={true}
-                  heading={"Driver Management"}
-                  description={
-                    "Manage your drivers, assign them to vehicles, and track license status."
-                  }
-                />
+                <DriverManagementData/>
+                
               }
             />
             <Route path="addNew" element={<AddNewDriver />}>
@@ -67,12 +67,8 @@ export default function AppRoutes() {
             <Route
               path=""
               element={
-                <TableData
-                  heading={"Route Management"}
-                  description={
-                    "Plan and manage routes to keep your school transport efficient and on schedule."
-                  }
-                />
+                <RouteManagementData />
+
               }
             />
             <Route path="addNew" element={<AddAndEditRoute />} />

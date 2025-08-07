@@ -32,7 +32,8 @@ const DriverDetails = () => {
             title="Driver Info"
           />
         </div>
-        <div className="col-md-6">
+        <div style={{width: "20px"}}></div> 
+        <div className="col-md-6 d-flex flex-column gap-2">
          <OutlinedCardOne/>
          <Height height={"20px"}/>
          <OutlinedCardTwo/>

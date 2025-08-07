@@ -4,6 +4,7 @@ import PhoneAutoDetect from '../phoneAutoDetect/PhoneAutoDetect';
 import DatePicker from 'react-datepicker';
 
 export default function VehicleForm({
+  className = 'col-md-4 mb-3',
   fields = [
     { type: 'text', label: 'Vehicle Number', placeholder: '' },
     { type: 'select', label: 'Vehicle Type', options: ['Car', 'Bus'] },
@@ -21,7 +22,7 @@ export default function VehicleForm({
           const { type, label, placeholder, options = [] } = field;
 
           return (
-            <div key={index} className="col-md-4 mb-3">
+            <div key={index} className={className}>
               {label && <label className="form-label">{label}</label>}
 
               {type === 'text' && (

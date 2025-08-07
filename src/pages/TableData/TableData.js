@@ -8,111 +8,51 @@ import Header from "../../components/header/Header";
 import "./TableData.css";
 import Height from "../../utlis/height";
 import Tabs from "../../utlis/tabs/Tabs";
+import { useState } from "react";
 
-export default function TableData({isTabs = false, heading, description, buttonText = "Add New"}) { 
-
+export default function TableData({
+  isTabs = false,
+  heading,
+  description,
+  buttonText = "Add New",
+  tableData = [
+    {
+      Heading1: "Data Missing",
+      Heading2: "Data Missing",
+      Heading3: "Data Missing",
+      Heading4: "Data Missing",
+      Heading5: "Data Missing",
+      Heading6: "Data Missing",
+      Heading7: "Data Missing",
+    },
+  ],
+}) {
   const navigate = useNavigate();
-  const vehicleData = [
-    {
-      vehicleNo: "TX1234",
-      makeModel: "Toyota Hiace 2021",
-      type: "Van",
-      year: 2021,
-      regExpiry: "2026-01-12",
-      status: "Active",
-      assignedTo: "Route 12",
-    },
-    {
-      vehicleNo: "TX1234",
-      makeModel: "Toyota Hiace 2021",
-      type: "Van",
-      year: 2021,
-      regExpiry: "2026-01-12",
-      status: "Active",
-      assignedTo: "Route 12",
-    },
-    {
-      vehicleNo: "TX1234",
-      makeModel: "Toyota Hiace 2021",
-      type: "Van",
-      year: 2021,
-      regExpiry: "2026-01-12",
-      status: "Active",
-      assignedTo: "Route 12",
-    },
-    {
-      vehicleNo: "TX1234",
-      makeModel: "Toyota Hiace 2021",
-      type: "Van",
-      year: 2021,
-      regExpiry: "2026-01-12",
-      status: "Active",
-      assignedTo: "Route 12",
-    },
-    {
-      vehicleNo: "TX1234",
-      makeModel: "Toyota Hiace 2021",
-      type: "Van",
-      year: 2021,
-      regExpiry: "2026-01-12",
-      status: "Active",
-      assignedTo: "Route 12",
-    },
-    {
-      vehicleNo: "TX1234",
-      makeModel: "Toyota Hiace 2021",
-      type: "Van",
-      year: 2021,
-      regExpiry: "2026-01-12",
-      status: "Active",
-      assignedTo: "Route 12",
-    },
-    {
-      vehicleNo: "TX1234",
-      makeModel: "Toyota Hiace 2021",
-      type: "Van",
-      year: 2021,
-      regExpiry: "2026-01-12",
-      status: "Active",
-      assignedTo: "Route 12",
-    },
-    {
-      vehicleNo: "TX1234",
-      makeModel: "Toyota Hiace 2021",
-      type: "Van",
-      year: 2021,
-      regExpiry: "2026-01-12",
-      status: "Active",
-      assignedTo: "Route 12",
-    },
-  ];
 
   let headToEdit = () => {
     navigate("addNew");
   };
 
+  const [activeTab, setActiveTab] = useState("default");
   return (
     <>
-      <Header
-        title={heading}
-        description={description}
-      />
+      <Header title={heading} description={description} />
       <Height height={20} />
       <div className="col border-class ">
-        {isTabs && <Tabs/>}
+        {isTabs && <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />}
+
         {isTabs && <Height height={20} />}
         <div className="d-flex align-items-center justify-content-between">
           <div className="col-md-3">
             <InputField
-            style={{ height: "40px" }}
-            name="search"
-            placeholder={"Search"}
-            icon={true}
-          />
+              style={{ height: "40px" }}
+              name="search"
+              placeholder={"Search"}
+              icon={true}
+            />
           </div>
-          
-          <div className="d-flex align-items-center col-md-3">
 
+          <div className="d-flex align-items-center col-md-3">
             <DropdownButton name={"Type"} options={["Van", "Bus"]} />
             <Width width={"10px"} />
             <DropdownButton name={"Status"} options={["Active", "In active"]} />
@@ -126,21 +66,9 @@ export default function TableData({isTabs = false, heading, description, buttonT
           </div>
         </div>
         <div>
-          <ReusableTable
-            heading={[
-              "Vehicle No",
-              "Make & Model",
-              "Type",
-              "Year",
-              "Reg Expiry",
-              "Status",
-              "Assigned To",
-              "Actions",
-            ]}
-            data={vehicleData}
-          />
+          <ReusableTable data={tableData} />
         </div>
-      </div></>
-
+      </div>
+    </>
   );
 }

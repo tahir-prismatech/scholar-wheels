@@ -7,12 +7,16 @@ const OutlinedCardOne = ({ field = [], title = "Vehicle Assignment", options = [
   return (
     <div className="card p-3 borderClass">
       <div className="card-body">
-        <div className="d-flex justify-content-between align-items-center">
+        <div className="d-flex justify-content-between align-items-start">
+
           <h5 className="card-title text-dark mb-3 text-base font-medium">
             {title}
           </h5>
-          <div className="d-flex align-items-center">
+          <div style={{height: "20px"}} className="d-flex align-items-center">
+
             <button
+            style={{height: "35px"}}
+
               className="btn btn-success"
               data-bs-toggle="modal"
               data-bs-target="#assignVehicleModal"
@@ -79,6 +83,7 @@ const OutlinedCardOne = ({ field = [], title = "Vehicle Assignment", options = [
             </div>
           </div>
         </div>
+                      <Height height={"20px"}/>
 
         {field.length > 0 ? (
           field.map((item, index) => (
